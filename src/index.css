@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.App {
+  width: 100%;
+  height: 150vh;
+  background-image: url(./imgaes/pexels-8moments-1183099.jpg);
+  background-position: center;
+  background-size: cover;
+}
+
+.container {
+  width: 90%;
+  height: 130vh;
+  margin: auto;
+  color: aliceblue;
+}
+.container div {
+  font-family: "Rubik", sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  font-style: normal;
+  margin: 20px 0;
+}
+
+@media (max-width: 443px) {
+  .container {
+    width: 100%;
+  }
+}
+.wrapper {
+  background-color: transparent;
+  -webkit-backdrop-filter: blur(25%);
+          backdrop-filter: blur(25%);
+  box-shadow: 5px 1px 20px 0px rgba(0, 0, 0, 0.4509803922);
+  width: 95%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper h2 {
+  padding: 0 0 0 15px;
+  font-family: "Playwrite BE VLG", cursive;
+  font-size: 35px;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: -4px;
+}
+.wrapper h2 a {
+  color: #91ff00;
+}
+.wrapper h2 span {
+  color: #ffffff;
+}
+.wrapper .list {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.wrapper .list li {
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper .list li span {
+  opacity: 0;
+  transition: 0.8s;
+}
+.wrapper .list li span svg {
+  font-size: 20px;
+  margin-top: 5px;
+  color: #f0f8ff;
+}
+.wrapper .list li:hover span {
+  opacity: 1;
+}
+.wrapper .list li a {
+  color: #f0f8ff;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  width: 100%;
+}
+.wrapper .list li a:hover {
+  color: #91ff00;
+}
+.wrapper .list li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  background-color: #91ff00;
+  transition: 0.7s;
+}
+.wrapper .list li a:hover::after {
+  width: 100%;
+}
+.wrapper .list li .active::after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  position: absolute;
+  bottom: -2px;
+  left: 0px;
+  background-color: #91ff00;
+}
+.wrapper .icon {
+  display: none;
+  font-size: 20px;
+  color: #f0f8ff;
+}
+
+@media (max-width: 485px) {
+  .wrapper {
+    width: 100%;
+  }
+  .wrapper .list {
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    transition: 0.8s;
+    background: linear-gradient(116deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+  }
+  .wrapper .list li {
+    margin: 20px 0;
+  }
+  .wrapper .list li a {
+    font-size: 18px;
+  }
+  .wrapper .shownav {
+    top: 0px;
+    left: 0px;
+  }
+  .wrapper .icon {
+    display: block;
+    position: absolute;
+    right: 20px;
+    cursor: pointer;
+  }
+}
+.footer-container {
+  width: 100%;
+  height: auto;
+  background: linear-gradient(135deg, #769785, #4f7742);
+  border-radius: 80px 0 20px 0;
+  position: relative;
+  bottom: 48px;
+  box-shadow: 20px -3px 9px 2px #8b894d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-container .f-wrapper {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 10px;
+  gap: 10px;
+}
+.footer-container .f-wrapper .discrptions {
+  width: 30%;
+  min-width: 100px;
+}
+.footer-container .f-wrapper .discrptions h2 {
+  padding: 0 0 0 15px;
+  font-family: "Playwrite BE VLG", cursive;
+  font-size: 35px;
+  font-weight: 400;
+  font-style: normal;
+  margin-top: -4px;
+}
+.footer-container .f-wrapper .discrptions h2 span {
+  color: #ffffff;
+}
+.footer-container .f-wrapper .discrptions p {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
+.footer-container .f-wrapper .addres {
+  width: 18%;
+  min-width: 100px;
+  line-height: 1.4rem;
+}
+.footer-container .f-wrapper .addres h3 {
+  color: #f0f8ff;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+}
+.footer-container .f-wrapper .addres p {
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+}
+.footer-container .f-wrapper .links {
+  width: 18%;
+  min-width: 100px;
+  line-height: 1.4rem;
+}
+.footer-container .f-wrapper .links h3 {
+  color: #f0f8ff;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+}
+.footer-container .f-wrapper .links .f-link_item {
+  display: block;
+  font-family: "Rubik", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: normal;
+  color: #000;
+}
+.footer-container .f-wrapper .links .f-link_item:hover {
+  color: #91ff00;
+}
+.footer-container .f-wrapper .f-contactUs {
+  width: 30%;
+  min-width: 100px;
+  line-height: 2.4rem;
+}
+.footer-container .f-wrapper .f-contactUs h3 {
+  color: #f0f8ff;
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+}
+.footer-container .f-wrapper .f-contactUs .form-inp {
+  display: flex;
+  background-color: rgba(255, 255, 255, 0.2588235294);
+  border-bottom: 1px solid red;
+}
+.footer-container .f-wrapper .f-contactUs .form-inp svg {
+  font-size: 25px;
+}
+.footer-container .f-wrapper .f-contactUs .form-inp input {
+  width: 100%;
+  height: 25px;
+  color: #4f7742;
+  background-color: transparent;
+  font-family: "Rubik", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: normal;
+  border: none;
+  padding: 0 10px;
+  border-radius: 5px;
+  outline: none;
+}
+.footer-container .f-wrapper .f-contactUs .social {
+  margin-top: 10px;
+}
+.footer-container .f-wrapper .f-contactUs .social .f-sociallink {
+  font-size: 30px;
+  margin: 0 10px;
+  color: #ffffff;
+  transition: 0.5s;
+}
+.footer-container .f-wrapper .f-contactUs .social .f-sociallink:hover {
+  color: #a8a8a8;
+}/*# sourceMappingURL=index.css.map */

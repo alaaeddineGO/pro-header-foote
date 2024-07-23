@@ -1,0 +1,119 @@
+@import '../../Sass/Mixit';
+
+.wrapper{
+    background-color: transparent;
+    backdrop-filter: blur(25%);
+    box-shadow: 5px 1px 20px 0px #00000073;
+    width: 95%;
+    margin: auto;
+    @include fcs;
+    h2{
+        padding: 0 0 0 15px;
+        @include font($f-fp,35px,400);
+        margin-top: -4px;
+        a{
+            color: $clr-primary; 
+        }
+        span{
+            color: $clr-whiht;
+        }
+    }
+    .list{
+        position: relative;
+        @include fcs;
+        li{
+            margin: 0 10px;
+            @include fcc;
+            span{ 
+                opacity: 0;
+                transition: .8s;
+                svg{
+                    font-size: 20px;
+                    margin-top: 5px;
+                    color: $clr-secandry;
+                }
+            }
+            &:hover span{
+                opacity: 1;
+            }
+            a{
+                color: $clr-secandry;
+                @include font ($f-fr,16px,400);
+                position: relative;
+                width: 100%;
+            
+                &:hover{          
+                    color: $clr-primary;
+
+                }
+                                                               
+                &::after{
+                    content: '';
+                    width: 0%;
+                    height: 2px;
+                    position: absolute;
+                    bottom: -2px;
+                    left: 0px;
+                    background-color: $clr-primary;
+                    transition: 0.7s;
+                }
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+            .active::after{
+                content: '';
+                width: 100%;
+                height: 2px;
+                position: absolute;
+                bottom: -2px;
+                left: 0px;
+                background-color: $clr-primary;
+            }
+        }
+        
+    }
+    .icon{
+        display: none;
+        font-size: 20px;
+        color: $clr-secandry;
+    }
+        
+}
+
+@media (max-width:485px) {
+    .wrapper{
+        width: 100%;
+        .list{
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            position: absolute;
+            top: 0px;
+            left: -100%;
+            transition: .8s;
+            background: linear-gradient(116deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+            backdrop-filter: blur(10px);
+            li{
+                margin: 20px 0;
+
+                a{
+                    font-size: 18px;
+                }
+            }
+        }
+        .shownav{
+            top: 0px;
+            left: 0px;
+        }
+        .icon{
+            display: block;
+            position: absolute;
+            right: 20px;
+            cursor: pointer;
+        }
+    }
+}
